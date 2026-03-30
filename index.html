@@ -26,22 +26,22 @@
       color: var(--ink);
       font-family: var(--mono);
       min-height: 100vh;
-      padding: 0 24px;
+      padding: 0 20px;
     }
 
     .container {
       max-width: 680px;
       margin: 0 auto;
-      padding: 80px 0 120px;
+      padding: 64px 0 100px;
     }
 
-    header { margin-bottom: 64px; }
+    header { margin-bottom: 48px; }
 
     h1 {
       font-size: 1rem;
       font-weight: 400;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .header-meta {
@@ -52,9 +52,10 @@
 
     .filter-bar {
       display: flex;
-      gap: 20px;
+      gap: 16px;
       margin-bottom: 48px;
       flex-wrap: wrap;
+      row-gap: 10px;
     }
 
     .filter-btn {
@@ -67,6 +68,7 @@
       cursor: pointer;
       padding: 0;
       transition: color 0.15s;
+      white-space: nowrap;
     }
 
     .filter-btn:hover,
@@ -81,8 +83,8 @@
       font-size: 1rem;
       font-weight: 300;
       color: var(--faint);
-      margin-bottom: 20px;
-      margin-top: 52px;
+      margin-bottom: 16px;
+      margin-top: 48px;
     }
 
     .section-year:first-of-type { margin-top: 0; }
@@ -93,9 +95,9 @@
       display: grid;
       grid-template-columns: 1fr auto;
       grid-template-rows: auto auto;
-      column-gap: 32px;
+      column-gap: 20px;
       row-gap: 4px;
-      padding: 12px 0;
+      padding: 11px 0;
     }
 
     .book-item.hidden { display: none; }
@@ -105,7 +107,7 @@
       grid-row: 1;
       display: flex;
       align-items: baseline;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -148,7 +150,7 @@
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 72px;
       font-size: 1rem;
       font-weight: 300;
       color: var(--muted);
@@ -162,7 +164,11 @@
     footer a:hover { color: var(--ink); }
 
     @media (max-width: 480px) {
-      .container { padding: 56px 0 80px; }
+      html { font-size: 12px; }
+      body { padding: 0 16px; }
+      .container { padding: 48px 0 80px; }
+      .filter-bar { gap: 12px; row-gap: 8px; }
+      .book-item { column-gap: 14px; }
     }
   </style>
 </head>
@@ -187,189 +193,395 @@
       <button class="filter-btn" data-filter="sport">sport</button>
     </div>
 
-
-
-    <p class="section-year">// fiction</p>
+    <!-- ECONOMICS -->
+    <p class="section-year">// economics</p>
     <ul class="book-list">
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="economics">
         <div class="book-title-author">
-          <span class="book-title">Infinite Jest</span>
+          <span class="book-title">Debt: The First 5,000 Years</span>
+          <span class="book-author">David Graeber</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">money is made up. has always been made up. carry on.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">Broken Money</span>
+          <span class="book-author">Lyn Alden</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">the monetary system explained by someone who clearly finds it offensive. love.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">The Bitcoin Standard</span>
+          <span class="book-author">Saifedean Ammous</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">bitcoin is good. central banks are bad. ammous is very calm about this.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">The Gold Standard</span>
+          <span class="book-author">Saifedean Ammous</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">the prequel. equally convinced. gold instead of bitcoin. same energy.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">In This Economy</span>
+          <span class="book-author">Kyla Scanlon</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">vibes-based economics made rigorous. scanlon is doing something real here.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">How Countries Go Broke</span>
+          <span class="book-author">Ray Dalio</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">dalio explains the big debt cycle. you will feel briefly very informed.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">Sold Out</span>
+          <span class="book-author">Ray Dalio</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">dalio, again. consistent worldview. consistently large books.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">The World for Sale</span>
+          <span class="book-author">Blas &amp; Farchy</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">felt like i was in a james bond film. commodity traders run the world. you didn't know this. now you do.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">Poor Charlie's Almanack</span>
+          <span class="book-author">Charlie Munger</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">mental models from a man who lived 99 years being correct about things.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">Collusion</span>
+          <span class="book-author">Luke Harding</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">russia, trump, money. harding is nervous writing this. understandably.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">Smart Money</span>
+          <span class="book-author">Brunello Rosa &amp; Casey Alston</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">fintech meets macro. dense but the right kind of dense.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">Field Guide to Global Payments</span>
+          <span class="book-author">various</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">how money moves around the planet. slower than you'd think. buy xrp.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">The Wealth Heiress's Guide to Financial Freedom</span>
+          <span class="book-author">various</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">the title is doing a lot of work. so is the content.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="economics">
+        <div class="book-title-author">
+          <span class="book-title">A Brief History of Central Banking</span>
+          <span class="book-author">various</span>
+          <span class="tag">[economics]</span>
+        </div>
+        <div class="book-note">long history of institutions with short memories.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+    </ul>
+
+    <!-- CULTURE -->
+    <p class="section-year">// culture</p>
+    <ul class="book-list">
+
+      <li class="book-item" data-tags="culture">
+        <div class="book-title-author">
+          <span class="book-title">Read Write Own</span>
+          <span class="book-author">Chris Dixon</span>
+          <span class="tag">[culture]</span>
+        </div>
+        <div class="book-note">incredible account from someone who saw it all. read and then read again.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="culture">
+        <div class="book-title-author">
+          <span class="book-title">Ayoade on Top</span>
+          <span class="book-author">Richard Ayoade</span>
+          <span class="tag">[culture]</span>
+        </div>
+        <div class="book-note">a book-length analysis of a minor gwyneth paltrow film. completely serious. hilarious.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="culture">
+        <div class="book-title-author">
+          <span class="book-title">Grip of Film</span>
+          <span class="book-author">Richard Ayoade</span>
+          <span class="tag">[culture]</span>
+        </div>
+        <div class="book-note">film theory via a fictional idiot. ayoade's best trick is making the idiot smarter than you.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="culture">
+        <div class="book-title-author">
+          <span class="book-title">Richard Ayoade on Ayoade</span>
+          <span class="book-author">Richard Ayoade</span>
+          <span class="tag">[culture]</span>
+        </div>
+        <div class="book-note">ayoade interviews himself. it is exactly as good as that sounds.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="culture">
+        <div class="book-title-author">
+          <span class="book-title">Faith, Hope and Carnage</span>
+          <span class="book-author">Nick Cave</span>
+          <span class="tag">[culture]</span>
+        </div>
+        <div class="book-note">grief, god, and bad seeds. cave has been through it. he is still going.</div>
+        <div class="book-rating">DNF</div>
+      </li>
+
+      <li class="book-item" data-tags="culture">
+        <div class="book-title-author">
+          <span class="book-title">They Can't Kill Us Until They Kill Us</span>
+          <span class="book-author">Hanif Abdurraqib</span>
+          <span class="tag">[culture]</span>
+        </div>
+        <div class="book-note">music criticism as autobiography. abdurraqib makes you feel like you were there.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="culture">
+        <div class="book-title-author">
+          <span class="book-title">Consider the Lobster</span>
           <span class="book-author">David Foster Wallace</span>
-          <span class="tag">[fiction]</span>
+          <span class="tag">[culture]</span>
         </div>
-        <div class="book-note">1,079 pages about tennis and addiction. both take over your life.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">A Little Life</span>
-          <span class="book-author">Hanya Yanagihara</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">recommended if you enjoy suffering. well written, but unecessarily painful.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">The White Book</span>
-          <span class="book-author">Han Kang</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">grief as interior design. short. devastating. white.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">The Wall</span>
-          <span class="book-author">Marlen Haushofer</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">woman wakes up alone in austria. honestly sounds fine.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">All Quiet on the Western Front</span>
-          <span class="book-author">Erich Maria Remarque</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">war is bad. took 200 pages to confirm.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">The Idiot</span>
-          <span class="book-author">Fyodor Dostoevsky</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">a good man enters russian society. it goes about as well as you'd expect.</div>
+        <div class="book-note">essays about everything. the lobster essay is about ethics. the porn essay is also about ethics.</div>
         <div class="book-rating">****-</div>
       </li>
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="culture">
         <div class="book-title-author">
-          <span class="book-title">1984</span>
-          <span class="book-author">George Orwell</span>
-          <span class="tag">[fiction]</span>
+          <span class="book-title">It</span>
+          <span class="book-author">Alexa Chung</span>
+          <span class="tag">[culture]</span>
         </div>
-        <div class="book-note">fun to reread every few years to check how we're doing. not great.</div>
+        <div class="book-note">fashion and feelings. chung is self-aware enough for both to land.</div>
         <div class="book-rating">*****</div>
       </li>
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="culture">
         <div class="book-title-author">
-          <span class="book-title">Dubliners</span>
-          <span class="book-author">James Joyce</span>
-          <span class="tag">[fiction]</span>
+          <span class="book-title">Ways of Seeing</span>
+          <span class="book-author">John Berger</span>
+          <span class="tag">[culture]</span>
         </div>
-        <div class="book-note">nothing happens. repeatedly. masterfully.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">The Great Gatsby</span>
-          <span class="book-author">F. Scott Fitzgerald</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">rich man throws parties hoping an ex notices. she notices.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">Slaughterhouse-Five</span>
-          <span class="book-author">Kurt Vonnegut</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">so it goes.</div>
+        <div class="book-note">how to look at art, advertising, women. you'll never see a painting the same way.</div>
         <div class="book-rating">****-</div>
       </li>
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="culture">
         <div class="book-title-author">
-          <span class="book-title">Galápagos</span>
-          <span class="book-author">Kurt Vonnegut</span>
-          <span class="tag">[fiction]</span>
+          <span class="book-title">Design as Art</span>
+          <span class="book-author">Bruno Munari</span>
+          <span class="tag">[culture]</span>
         </div>
-        <div class="book-note">evolution comes for us all. vonnegut is smug about it.</div>
+        <div class="book-note">everything is design. munari is delighted about this.</div>
         <div class="book-rating">***--</div>
       </li>
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="culture">
         <div class="book-title-author">
-          <span class="book-title">Lord of the Flies</span>
-          <span class="book-author">William Golding</span>
-          <span class="tag">[fiction]</span>
+          <span class="book-title">Manchester Unspun</span>
+          <span class="book-author">various</span>
+          <span class="tag">[culture]</span>
         </div>
-        <div class="book-note">children are feral. golding very sure about this. piggys glasses broke me.</div>
+        <div class="book-note">manchester's myth vs its reality. the myth is winning.</div>
         <div class="book-rating">*****</div>
       </li>
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="culture">
         <div class="book-title-author">
-          <span class="book-title">The Catcher in the Rye</span>
-          <span class="book-author">J.D. Salinger</span>
-          <span class="tag">[fiction]</span>
+          <span class="book-title">Where Wizards Stay Up Late</span>
+          <span class="book-author">Katie Hafner</span>
+          <span class="tag">[culture]</span>
         </div>
-        <div class="book-note">teenager finds everything phoney. including, eventually, this book.</div>
-        <div class="book-rating">***--</div>
+        <div class="book-note">how the internet was built by people who had no idea it would become this.</div>
+        <div class="book-rating">****-</div>
       </li>
 
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">Life of Pi</span>
-          <span class="book-author">Yann Martel</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">boy. tiger. boat. god. pick your preferred ending.</div>
-        <div class="book-rating">***--</div>
-      </li>
+    </ul>
 
-      <li class="book-item" data-tags="fiction">
-        <div class="book-title-author">
-          <span class="book-title">The Alchemist</span>
-          <span class="book-author">Paulo Coelho</span>
-          <span class="tag">[fiction]</span>
-        </div>
-        <div class="book-note">the universe conspires to help you. the universe is very busy.</div>
-        <div class="book-rating">**---</div>
-      </li>
+    <!-- POLITICS -->
+    <p class="section-year">// politics</p>
+    <ul class="book-list">
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="politics">
         <div class="book-title-author">
-          <span class="book-title">Bridge Over the River Kwai</span>
-          <span class="book-author">Pierre Boulle</span>
-          <span class="tag">[fiction]</span>
+          <span class="book-title">The Ultimate Hidden Truth of the World</span>
+          <span class="book-author">David Graeber</span>
+          <span class="tag">[politics]</span>
         </div>
-        <div class="book-note">british officer builds a bridge for his captors. out of pride. classic.</div>
+        <div class="book-note">graeber's final word. he had a lot of words. all of them correct.</div>
         <div class="book-rating">*****</div>
       </li>
 
-      <li class="book-item" data-tags="fiction">
+      <li class="book-item" data-tags="politics">
         <div class="book-title-author">
-          <span class="book-title">The Illustrated Man</span>
-          <span class="book-author">Ray Bradbury</span>
-          <span class="tag">[fiction]</span>
+          <span class="book-title">Why Nations Fail</span>
+          <span class="book-author">Acemoglu &amp; Robinson</span>
+          <span class="tag">[politics]</span>
         </div>
-        <div class="book-note">tattoos that tell the future. better than a horoscope. marginally.</div>
+        <div class="book-note">institutions matter. some countries missed this. catastrophically.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="politics">
+        <div class="book-title-author">
+          <span class="book-title">Breakneck: China's Quest to Engineer the Future</span>
+          <span class="book-author">Dan Wang</span>
+          <span class="tag">[politics]</span>
+        </div>
+        <div class="book-note">china is building things at a pace that makes everyone else look sedated.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+    </ul>
+
+    <!-- SCIENCE -->
+    <p class="section-year">// science</p>
+    <ul class="book-list">
+
+      <li class="book-item" data-tags="science">
+        <div class="book-title-author">
+          <span class="book-title">Things to Make and Do in the Fourth Dimension</span>
+          <span class="book-author">Matt Parker</span>
+          <span class="tag">[science]</span>
+        </div>
+        <div class="book-note">maths as entertainment. parker is having far too much fun.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="science">
+        <div class="book-title-author">
+          <span class="book-title">The Maths of Life and Death</span>
+          <span class="book-author">Kit Yates</span>
+          <span class="tag">[science]</span>
+        </div>
+        <div class="book-note">statistics are everywhere and you've been misreading them your whole life. sorry.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="science">
+        <div class="book-title-author">
+          <span class="book-title">How to Not Be Wrong</span>
+          <span class="book-author">Jordan Ellenberg</span>
+          <span class="tag">[science]</span>
+        </div>
+        <div class="book-note">mathematical thinking applied to everything. slightly smug.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="science">
+        <div class="book-title-author">
+          <span class="book-title">A Field Guide to Lies</span>
+          <span class="book-author">Daniel Levitin</span>
+          <span class="tag">[science]</span>
+        </div>
+        <div class="book-note">how to spot statistical nonsense.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="science">
+        <div class="book-title-author">
+          <span class="book-title">Range</span>
+          <span class="book-author">David Epstein</span>
+          <span class="tag">[science]</span>
+        </div>
+        <div class="book-note">generalists win in the end. vindication, finally.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="science">
+        <div class="book-title-author">
+          <span class="book-title">Cured</span>
+          <span class="book-author">Jeff Rediger</span>
+          <span class="tag">[science]</span>
+        </div>
+        <div class="book-note">spontaneous remission. science doesn't fully understand it yet. neither will you after reading this.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="science">
+        <div class="book-title-author">
+          <span class="book-title">A Humble Pie</span>
+          <span class="book-author">various</span>
+          <span class="tag">[science]</span>
+        </div>
+        <div class="book-note">a comedy of mathematical errors. feels personal somehow.</div>
         <div class="book-rating">***--</div>
       </li>
 
     </ul>
 
-
-
+    <!-- PHILOSOPHY -->
     <p class="section-year">// philosophy</p>
     <ul class="book-list">
 
-      <li class="book-item" data-tags="psychology">
+      <li class="book-item" data-tags="philosophy">
         <div class="book-title-author">
           <span class="book-title">The Republic</span>
           <span class="book-author">Plato</span>
@@ -378,9 +590,6 @@
         <div class="book-note">what is justice? plato spends 400 pages not quite answering.</div>
         <div class="book-rating">***--</div>
       </li>
-
-    <p class="section-year">// philosophy</p>
-    <ul class="book-list">
 
       <li class="book-item" data-tags="philosophy">
         <div class="book-title-author">
@@ -400,16 +609,6 @@
         </div>
         <div class="book-note">written by a former slave. the irony is the point.</div>
         <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="philosophy">
-        <div class="book-title-author">
-          <span class="book-title">Man and His Symbols</span>
-          <span class="book-author">Carl Jung</span>
-          <span class="tag">[psychology]</span>
-        </div>
-        <div class="book-note">your dreams mean something. probably something embarrassing.</div>
-        <div class="book-rating">****-</div>
       </li>
 
       <li class="book-item" data-tags="philosophy">
@@ -518,7 +717,7 @@
           <span class="book-author">Alain de Botton</span>
           <span class="tag">[philosophy]</span>
         </div>
-        <div class="book-note">a book about self-hatred written with great warmth. very de botton. love love love. </div>
+        <div class="book-note">a book about self-hatred written with great warmth. very de botton. love love love.</div>
         <div class="book-rating">*****</div>
       </li>
 
@@ -544,309 +743,185 @@
 
     </ul>
 
-
-# -------------------------------------------------------
-# SCIENCE
-# -------------------------------------------------------
-    <p class="section-year">// science</p>
+    <!-- FICTION -->
+    <p class="section-year">// fiction</p>
     <ul class="book-list">
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">Things to Make and Do in the Fourth Dimension</span>
-          <span class="book-author">Matt Parker</span>
-          <span class="tag">[science]</span>
+          <span class="book-title">Infinite Jest</span>
+          <span class="book-author">David Foster Wallace</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">maths as entertainment. parker is having far too much fun.</div>
+        <div class="book-note">1,079 pages about tennis and addiction. both take over your life.</div>
         <div class="book-rating">*****</div>
       </li>
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">The Maths of Life and Death</span>
-          <span class="book-author">Kit Yates</span>
-          <span class="tag">[science]</span>
+          <span class="book-title">A Little Life</span>
+          <span class="book-author">Hanya Yanagihara</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">statistics are everywhere and you've been misreading them your whole life. sorry.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="science">
-        <div class="book-title-author">
-          <span class="book-title">How to Not Be Wrong</span>
-          <span class="book-author">Jordan Ellenberg</span>
-          <span class="tag">[science]</span>
-        </div>
-        <div class="book-note">mathematical thinking applied to everything. slightly smug.</div>
+        <div class="book-note">recommended if you enjoy suffering. well written, but unnecessarily painful.</div>
         <div class="book-rating">***--</div>
       </li>
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">The Organized Mind</span>
-          <span class="book-author">Daniel Levitin</span>
-          <span class="tag">[psychology]</span>
+          <span class="book-title">The White Book</span>
+          <span class="book-author">Han Kang</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">mind is even less organized after this. to dense for my little pee brain .</div>
-        <div class="book-rating">-DNF-</div>
+        <div class="book-note">grief as interior design. short. devastating. white.</div>
+        <div class="book-rating">*****</div>
       </li>
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">A Field Guide to Lies</span>
-          <span class="book-author">Daniel Levitin</span>
-          <span class="tag">[science]</span>
+          <span class="book-title">The Wall</span>
+          <span class="book-author">Marlen Haushofer</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">how to spot statistical nonsense.</div>
-        <div class="book-rating">***--</div>
+        <div class="book-note">woman wakes up alone in austria. honestly sounds fine.</div>
+        <div class="book-rating">*****</div>
       </li>
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">Range</span>
-          <span class="book-author">David Epstein</span>
-          <span class="tag">[science]</span>
+          <span class="book-title">All Quiet on the Western Front</span>
+          <span class="book-author">Erich Maria Remarque</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">generalists win in the end. vindication, finally.</div>
+        <div class="book-note">war is bad. took 200 pages to confirm.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">The Idiot</span>
+          <span class="book-author">Fyodor Dostoevsky</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">a good man enters russian society. it goes about as well as you'd expect.</div>
         <div class="book-rating">****-</div>
       </li>
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">The Art of Thinking Clearly</span>
-          <span class="book-author">Rolf Dobelli</span>
-          <span class="tag">[psychology]</span>
+          <span class="book-title">1984</span>
+          <span class="book-author">George Orwell</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">99 cognitive biases. you have all of them.</div>
-        <div class="book-rating">****-</div>
+        <div class="book-note">fun to reread every few years to check how we're doing. not great.</div>
+        <div class="book-rating">*****</div>
       </li>
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">Cured</span>
-          <span class="book-author">Jeff Rediger</span>
-          <span class="tag">[science]</span>
+          <span class="book-title">Dubliners</span>
+          <span class="book-author">James Joyce</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">spontaneous remission. science doesn't fully understand it yet. neither will you after reading this.</div>
+        <div class="book-note">nothing happens. repeatedly. masterfully.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">The Great Gatsby</span>
+          <span class="book-author">F. Scott Fitzgerald</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">rich man throws parties hoping an ex notices. she notices.</div>
         <div class="book-rating">***--</div>
       </li>
 
-      <li class="book-item" data-tags="science">
+      <li class="book-item" data-tags="fiction">
         <div class="book-title-author">
-          <span class="book-title">A Humble Pie</span>
-          <span class="book-author">various</span>
-          <span class="tag">[science]</span>
+          <span class="book-title">Slaughterhouse-Five</span>
+          <span class="book-author">Kurt Vonnegut</span>
+          <span class="tag">[fiction]</span>
         </div>
-        <div class="book-note">a comedy of mathematical errors. feels personal somehow.</div>
+        <div class="book-note">so it goes.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">Galápagos</span>
+          <span class="book-author">Kurt Vonnegut</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">evolution comes for us all. vonnegut is smug about it.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">Lord of the Flies</span>
+          <span class="book-author">William Golding</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">children are feral. golding very sure about this. piggy's glasses broke me.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">The Catcher in the Rye</span>
+          <span class="book-author">J.D. Salinger</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">teenager finds everything phoney. including, eventually, this book.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">Life of Pi</span>
+          <span class="book-author">Yann Martel</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">boy. tiger. boat. god. pick your preferred ending.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">The Alchemist</span>
+          <span class="book-author">Paulo Coelho</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">the universe conspires to help you. the universe is very busy.</div>
+        <div class="book-rating">**---</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">Bridge Over the River Kwai</span>
+          <span class="book-author">Pierre Boulle</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">british officer builds a bridge for his captors. out of pride. classic.</div>
+        <div class="book-rating">*****</div>
+      </li>
+
+      <li class="book-item" data-tags="fiction">
+        <div class="book-title-author">
+          <span class="book-title">The Illustrated Man</span>
+          <span class="book-author">Ray Bradbury</span>
+          <span class="tag">[fiction]</span>
+        </div>
+        <div class="book-note">tattoos that tell the future. better than a horoscope. marginally.</div>
         <div class="book-rating">***--</div>
       </li>
 
     </ul>
 
-
-
-
-    <p class="section-year">// politics</p>
-    <ul class="book-list">
-
-      <li class="book-item" data-tags="politics">
-        <div class="book-title-author">
-          <span class="book-title">The Ultimate Hidden Truth of the World</span>
-          <span class="book-author">David Graeber</span>
-          <span class="tag">[politics]</span>
-        </div>
-        <div class="book-note">graeber's final word. he had a lot of words. all of them correct.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="politicss">
-        <div class="book-title-author">
-          <span class="book-title">Why Nations Fail</span>
-          <span class="book-author">Acemoglu &amp; Robinson</span>
-          <span class="tag">[politics]</span>
-        </div>
-        <div class="book-note">institutions matter. some countries missed this. catastrophically.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="politics">
-        <div class="book-title-author">
-          <span class="book-title">Breakneck: China's Quest to Engineer the Future</span>
-          <span class="book-author">Dan Wang</span>
-          <span class="tag">[politics]</span>
-        </div>
-        <div class="book-note">china is building things at a pace that makes everyone else look sedated.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-    </ul>
-
-
-
-
-    <p class="section-year">// economics</p>
-    <ul class="book-list">
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Debt: The First 5,000 Years</span>
-          <span class="book-author">David Graeber</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">money is made up. has always been made up. carry on.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Broken Money</span>
-          <span class="book-author">Lyn Alden</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">the monetary system explained by someone who clearly finds it offensive. love.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">The Bitcoin Standard</span>
-          <span class="book-author">Saifedean Ammous</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">bitcoin is good. central banks are bad. ammous is very calm about this.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">The Gold Standard</span>
-          <span class="book-author">Saifedean Ammous</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">the prequel. equally convinced. gold instead of bitcoin. same energy.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">In This Economy</span>
-          <span class="book-author">Kyla Scanlon</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">vibes-based economics made rigorous. scanlon is doing something real here.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">How Countries Go Broke</span>
-          <span class="book-author">Ray Dalio</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">dalio explains the big debt cycle. you will feel briefly very informed.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Sold Out</span>
-          <span class="book-author">Ray Dalio</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">dalio, again. consistent worldview. consistently large books.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">The World for Sale</span>
-          <span class="book-author">Blas &amp; Farchy</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">felt like i was in a james bond film. commodity traders run the world. you didn't know this. now you do.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Poor Charlie's Almanack</span>
-          <span class="book-author">Charlie Munger</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">mental models from a man who lived 99 years being correct about things.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Values</span>
-          <span class="book-author">Mark Carney</span>
-          <span class="tag">economics]</span>
-        </div>
-        <div class="book-note">markets don't have morals. carney would like them to consider it.</div>
-        <div class="book-rating">****</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Collusion</span>
-          <span class="book-author">Luke Harding</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">russia, trump, money. harding is nervous writing this. understandably.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Smart Money</span>
-          <span class="book-author">Brunello Rosa &amp; Casey Alston</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">fintech meets macro. dense but the right kind of dense.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">Field Guide to Global Payments</span>
-          <span class="book-author">various</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">how money moves around the planet. slower than you'd think. buy xrp.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">The Wealth Heiress's Guide to Financial Freedom</span>
-          <span class="book-author">various</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">the title is doing a lot of work. so is the content.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="economics">
-        <div class="book-title-author">
-          <span class="book-title">A Brief History of Central Banking</span>
-          <span class="book-author">various</span>
-          <span class="tag">[economics]</span>
-        </div>
-        <div class="book-note">long history of institutions with short memories.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-    </ul>
-
-
-
-
-
+    <!-- SELF-HELP -->
     <p class="section-year">// self-help</p>
     <ul class="book-list">
-
 
       <li class="book-item" data-tags="selfhelp">
         <div class="book-title-author">
@@ -900,21 +975,11 @@
 
       <li class="book-item" data-tags="selfhelp">
         <div class="book-title-author">
-          <span class="book-title">The Status Game</span>
-          <span class="book-author">Will Storr</span>
-          <span class="tag">[psychology]</span>
-        </div>
-        <div class="book-note">everything you do is about status. storr is polite about it. barely.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="selfhelp">
-        <div class="book-title-author">
           <span class="book-title">Everything is F*cked</span>
           <span class="book-author">Mark Manson</span>
           <span class="tag">[self-help]</span>
         </div>
-        <div class="book-note">honestly, i cant remember.</div>
+        <div class="book-note">honestly, i can't remember.</div>
         <div class="book-rating">**---</div>
       </li>
 
@@ -944,7 +1009,7 @@
           <span class="book-author">Malcolm Gladwell</span>
           <span class="tag">[self-help]</span>
         </div>
-        <div class="book-note">the reason im not an olympian is because i wasnt born in janurary. 10,000 hours is just one data point, bill gates.</div>
+        <div class="book-note">the reason i'm not an olympian is because i wasn't born in january. 10,000 hours is just one data point, bill gates.</div>
         <div class="book-rating">****</div>
       </li>
 
@@ -1010,9 +1075,153 @@
 
     </ul>
 
+    <!-- PSYCHOLOGY -->
+    <p class="section-year">// psychology</p>
+    <ul class="book-list">
 
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">The Status Game</span>
+          <span class="book-author">Will Storr</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">everything you do is about status. storr is polite about it. barely.</div>
+        <div class="book-rating">*****</div>
+      </li>
 
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Influence</span>
+          <span class="book-author">Robert Cialdini</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">you are being manipulated constantly. here's how. useful for offense and defense.</div>
+        <div class="book-rating">*****</div>
+      </li>
 
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Persuasion</span>
+          <span class="book-author">Robert Cialdini</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">cialdini, but updated. still being manipulated. still useful to know.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Laws of Human Nature</span>
+          <span class="book-author">Robert Greene</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">humans are predictably irrational. greene has catalogued all 18 laws. of course he has.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">The Art of Seduction</span>
+          <span class="book-author">Robert Greene</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">greene classifies seducers. feeling insecure because i'm not a sexy baby.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Strategies of War</span>
+          <span class="book-author">Robert Greene</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">sun tzu for people who want more footnotes. greene delivers.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Man and His Symbols</span>
+          <span class="book-author">Carl Jung</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">your dreams mean something. probably something embarrassing.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">The Organized Mind</span>
+          <span class="book-author">Daniel Levitin</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">mind is even less organized after this. too dense for my little pea brain.</div>
+        <div class="book-rating">-DNF-</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">The Art of Thinking Clearly</span>
+          <span class="book-author">Rolf Dobelli</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">99 cognitive biases. you have all of them.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">The Brain That Changes Itself</span>
+          <span class="book-author">Norman Doidge</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">your brain is plastic. not a criticism.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Why We Sleep</span>
+          <span class="book-author">Matthew Walker</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">you are not sleeping enough. this book will keep you up at night.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Atomic Habits</span>
+          <span class="book-author">James Clear</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">1% better every day. fine. yes. we get it.</div>
+        <div class="book-rating">***--</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">Never Split the Difference</span>
+          <span class="book-author">Chris Voss</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">FBI hostage negotiator gives life advice. it's applicable. terrifyingly.</div>
+        <div class="book-rating">****-</div>
+      </li>
+
+      <li class="book-item" data-tags="psychology">
+        <div class="book-title-author">
+          <span class="book-title">How to Win Friends and Influence People</span>
+          <span class="book-author">Dale Carnegie</span>
+          <span class="tag">[psychology]</span>
+        </div>
+        <div class="book-note">1936. this can be summarized as "don't be an asshole".</div>
+        <div class="book-rating">**---</div>
+      </li>
+
+    </ul>
+
+    <!-- SPORT -->
     <p class="section-year">// sport</p>
     <ul class="book-list">
 
@@ -1042,7 +1251,7 @@
           <span class="book-author">Rich Roll</span>
           <span class="tag">[sport]</span>
         </div>
-        <div class="book-note">man eats only plants and run alot.</div>
+        <div class="book-note">man eats only plants and runs a lot.</div>
         <div class="book-rating">***--</div>
       </li>
 
@@ -1062,7 +1271,7 @@
           <span class="book-author">Scott Jurek</span>
           <span class="tag">[sport]</span>
         </div>
-        <div class="book-note">jurek is very calm about running 100 miles</div>
+        <div class="book-note">jurek is very calm about running 100 miles.</div>
         <div class="book-rating">***--</div>
       </li>
 
@@ -1117,244 +1326,6 @@
       </li>
 
     </ul>
-
-
-
-    <p class="section-year">// culture</p>
-    <ul class="book-list">
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Read Write Own</span>
-          <span class="book-author">Chris Dixon</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">incredible account from someone who saw it all. read and then read again.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Ayoade on Top</span>
-          <span class="book-author">Richard Ayoade</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">a book-length analysis of a minor gwyneth paltrow film. completely serious. hilarious.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Grip of Film</span>
-          <span class="book-author">Richard Ayoade</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">film theory via a fictional idiot. ayoade's best trick is making the idiot smarter than you.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Richard Ayoade on Ayoade</span>
-          <span class="book-author">Richard Ayoade</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">ayoade interviews himself. it is exactly as good as that sounds.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Faith, Hope and Carnage</span>
-          <span class="book-author">Nick Cave</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">grief, god, and bad seeds. cave has been through it. he is still going.</div>
-        <div class="book-rating">DNF</div>
-      </li>
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">They Can't Kill Us Until They Kill Us</span>
-          <span class="book-author">Hanif Abdurraqib</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">music criticism as autobiography. abdurraqib makes you feel like you were there.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Consider the Lobster</span>
-          <span class="book-author">David Foster Wallace</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">essays about everything. the lobster essay is about ethics. the porn essay is also about ethics.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">It</span>
-          <span class="book-author">Alexa Chung</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">fashion and feelings. chung is self-aware enough for both to land.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Ways of Seeing</span>
-          <span class="book-author">John Berger</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">how to look at art, advertising, women. you'll never see a painting the same way.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Design as Art</span>
-          <span class="book-author">Bruno Munari</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">everything is design. munari is delighted about this.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Manchester Unspun</span>
-          <span class="book-author">various</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">manchester's myth vs its reality. the myth is winning.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-
-      <li class="book-item" data-tags="culture">
-        <div class="book-title-author">
-          <span class="book-title">Where Wizards Stay Up Late</span>
-          <span class="book-author">Katie Hafner</span>
-          <span class="tag">[culture]</span>
-        </div>
-        <div class="book-note">how the internet was built by people who had no idea it would become this.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-    </ul>
-
-
-
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">Laws of Human Nature</span>
-          <span class="book-author">Robert Greene</span>
-          <span class="tag">[psychology]</span>
-        </div>
-        <div class="book-note">humans are predictably irrational. greene has catalogued all 18 laws. of course he has.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">The Art of Seduction</span>
-          <span class="book-author">Robert Greene</span>
-          <span class="tag">[psychology]</span>
-        </div>
-        <div class="book-note">greene classifies seducers. feeling insecure because im not a sexy baby</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">Strategies of War</span>
-          <span class="book-author">Robert Greene</span>
-          <span class="tag">[self-help]</span>
-        </div>
-        <div class="book-note">sun tzu for people who want more footnotes. greene delivers.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">The Brain That Changes Itself</span>
-          <span class="book-author">Norman Doidge</span>
-          <span class="tag">[psychology]</span>
-        </div>
-        <div class="book-note">your brain is plastic. not a criticism.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">Why We Sleep</span>
-          <span class="book-author">Matthew Walker</span>
-          <span class="tag">[science]</span>
-        </div>
-        <div class="book-note">you are not sleeping enough. this book will keep you up at night.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">Atomic Habits</span>
-          <span class="book-author">James Clear</span>
-          <span class="tag">[self-help]</span>
-        </div>
-        <div class="book-note">1% better every day. fine. yes. we get it.</div>
-        <div class="book-rating">***--</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">Never Split the Difference</span>
-          <span class="book-author">Chris Voss</span>
-          <span class="tag">[self-help]</span>
-        </div>
-        <div class="book-note">FBI hostage negotiator gives life advice. it's applicable. terrifyingly.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">Influence</span>
-          <span class="book-author">Robert Cialdini</span>
-          <span class="tag">[psychology]</span>
-        </div>
-        <div class="book-note">you are being manipulated constantly. here's how. useful for offense and defense.</div>
-        <div class="book-rating">*****</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">Persuasion</span>
-          <span class="book-author">Robert Cialdini</span>
-          <span class="tag">[psychology]</span>
-        </div>
-        <div class="book-note">cialdini, but updated. still being manipulated. still useful to know.</div>
-        <div class="book-rating">****-</div>
-      </li>
-
-      <li class="book-item" data-tags="psychology">
-        <div class="book-title-author">
-          <span class="book-title">How to Win Friends and Influence People</span>
-          <span class="book-author">Dale Carnegie</span>
-          <span class="tag">[self-help]</span>
-        </div>
-        <div class="book-note">1936. this can be summarized as "dont be an asshole".</div>
-        <div class="book-rating">**---</div>
-      </li>
-
-    </ul>
-
-
 
     <footer>
       <span>emily mcvl</span>
