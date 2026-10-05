@@ -54,7 +54,8 @@
     </header>
 
     <div class="filter-bar" role="group" aria-label="Filter by genre">
-      <button class="filter-btn active" data-filter="recent">recent</button>
+      <button class="filter-btn active" data-filter="5stars">my 5 stars</button>
+      <button class="filter-btn" data-filter="recent">recent</button>
       <button class="filter-btn" data-filter="economics">economics</button>
       <button class="filter-btn" data-filter="culture">culture</button>
       <button class="filter-btn" data-filter="politics">politics</button>
@@ -77,7 +78,7 @@
   <script>
     /* ── CSV parser (handles quoted fields with commas) ── */
     function parseCSV(text) {
-      const lines = text.trim().split('\n');
+      const lines = text.replace(/\\r/g, '').trim().split('\n');
       const headers = parseCSVLine(lines[0]);
       return lines.slice(1).map(line => {
         const vals = parseCSVLine(line);
@@ -151,6 +152,16 @@
     function render(books, filter) {
       const container = document.getElementById('book-container');
 
+      if (filter === '5stars') {
+        const faves = books
+          .filter(b => b.rating.trim() === '*****')
+          .sort((a, b) => a.title.localeCompare(b.title));
+        container.innerHTML =
+          `<p class="section-year">// my 5 stars</p>
+           <ul class="book-list">${faves.map(b => renderBook(b, true)).join('')}</ul>`;
+        return;
+      }
+
       if (filter === 'recent') {
         // Flat list: only books with an "added" value, sorted A-Z, with [tag] shown
         const recent = books
@@ -174,7 +185,7 @@
 
     /* ── boot ── */
     fetch('books.csv')
-      .then(r => r.text())
+      .then(r => { if (!r.ok) throw new Error('books.csv not found'); return r.text(); })
       .then(text => {
         const books = parseCSV(text);
 
@@ -188,8 +199,9 @@
         });
 
         // default view
-        render(books, 'recent');
-      });
+        render(books, '5stars');
+      })
+      .catch(e => { document.getElementById('book-container').innerHTML = '<p class="section-year" style="color:var(--accent)">' + e.message + '</p>'; });
   </script>
 </body>
 </html>
