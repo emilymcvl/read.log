@@ -77,15 +77,42 @@
 
   <script>
     /* ── CSV parser (handles quoted fields with commas) ── */
+    /* Tolerant of Excel saves: strips the byte-order mark, ignores header
+       case/spaces, skips blank rows, and normalises ratings + dates. */
     function parseCSV(text) {
-      const lines = text.replace(/\r/g, '').trim().split('\n');
-      const headers = parseCSVLine(lines[0]);
-      return lines.slice(1).map(line => {
-        const vals = parseCSVLine(line);
-        const obj = {};
-        headers.forEach((h, i) => obj[h] = vals[i] || '');
-        return obj;
-      });
+      const lines = text.replace(/^\uFEFF/, '').replace(/\r/g, '').trim().split('\n');
+      const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase());
+      return lines.slice(1)
+        .filter(line => line.replace(/,/g, '').trim())
+        .map(line => {
+          const vals = parseCSVLine(line);
+          const obj = {};
+          headers.forEach((h, i) => obj[h] = (vals[i] || '').trim());
+          ['title', 'author', 'note', 'rating', 'category', 'added'].forEach(k => obj[k] = obj[k] || '');
+          obj.rating = obj.rating.replace(/\s/g, '');
+          obj.category = obj.category.toLowerCase();
+          obj.added = normaliseMonth(obj.added);
+          return obj;
+        })
+        .filter(b => b.title);
+    }
+
+    /* Excel likes to turn "2026-10" into "Oct-26", "10/1/2026", "2026-10-01",
+       "October 2026" etc. Turn any of those back into "YYYY-MM". */
+    const MONTHS = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+    function normaliseMonth(s) {
+      if (!s) return '';
+      const pad = m => String(m).padStart(2, '0');
+      const fullYear = y => (y.length === 2 ? '20' + y : y);
+      let m;
+      if ((m = s.match(/^(\d{4})[-\/.](\d{1,2})([-\/.]\d{1,2})?$/))) return `${m[1]}-${pad(m[2])}`;   // 2026-10, 2026-10-01
+      if ((m = s.match(/^(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{2,4})$/))) return `${fullYear(m[3])}-${pad(m[1])}`; // 10/1/2026 (US)
+      if ((m = s.match(/^(\d{1,2})[\/.-](\d{4})$/))) return `${m[2]}-${pad(m[1])}`;                    // 10/2026
+      if ((m = s.match(/([a-z]{3})[a-z]*[\s\-\/,]*(\d{2,4})/i)) && MONTHS.includes(m[1].toLowerCase()))
+        return `${fullYear(m[2])}-${pad(MONTHS.indexOf(m[1].toLowerCase()) + 1)}`;                   // Oct-26, October 2026
+      if ((m = s.match(/^(\d{2,4})[\s\-\/]*([a-z]{3})/i)) && MONTHS.includes(m[2].toLowerCase()))
+        return `${fullYear(m[1])}-${pad(MONTHS.indexOf(m[2].toLowerCase()) + 1)}`;                   // 26-Oct
+      return s;
     }
 
     function parseCSVLine(line) {
@@ -163,13 +190,22 @@
       }
 
       if (filter === 'recent') {
-        // Flat list: only books with an "added" value, sorted A-Z, with [tag] shown
-        const recent = books
-          .filter(b => b.added)
-          .sort((a, b) => a.title.localeCompare(b.title));
-        container.innerHTML =
-          `<p class="section-year">// recently added</p>
-           <ul class="book-list">${recent.map(b => renderBook(b, true)).join('')}</ul>`;
+        // Grouped by month (added = YYYY-MM): this month and the two before it,
+        // newest first, books A-Z within each month. Empty months are skipped.
+        const now = new Date();
+        let html = '';
+        for (let i = 0; i < 3; i++) {
+          const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+          const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+          const monthBooks = books
+            .filter(b => b.added.trim() === key)
+            .sort((a, b) => a.title.localeCompare(b.title));
+          if (!monthBooks.length) continue;
+          const label = d.toLocaleString('en-US', { month: 'long', year: 'numeric' }).toLowerCase();
+          html += `<p class="section-year">// ${label}</p>
+           <ul class="book-list">${monthBooks.map(b => renderBook(b, true)).join('')}</ul>`;
+        }
+        container.innerHTML = html || '<p class="section-year">// nothing added in the last 3 months</p>';
         return;
       }
 
