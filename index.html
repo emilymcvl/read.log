@@ -88,6 +88,8 @@
           const vals = parseCSVLine(line);
           const obj = {};
           headers.forEach((h, i) => obj[h] = (vals[i] || '').trim());
+          // the column is called "date added" (older files used "added")
+          obj.added = obj['date added'] || obj['date_added'] || obj.added || '';
           ['title', 'author', 'note', 'rating', 'category', 'added'].forEach(k => obj[k] = obj[k] || '');
           obj.rating = obj.rating.replace(/\s/g, '');
           obj.category = obj.category.toLowerCase();
